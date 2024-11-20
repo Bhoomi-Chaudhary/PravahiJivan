@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to CSS -->
+    <style>body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        background-color: #4CAF50;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    header nav ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    header nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+    
+    header nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .about-us {
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .team-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+    
+    .team-member {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    .team-member img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+    
+    .team-member h3 {
+        margin-top: 10px;
+    }
+    
+    .team-member button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .team-member button:hover {
+        background-color: green;
+    }
+    
+    .popup {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .popup-content {
+        background-color: white;
+        padding: 20px;
+        margin: 10% auto;
+        width: 50%;
+        border-radius: 8px;
+    }
+    
+    .popup .close-btn {
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .popup .close-btn:hover,
+    .popup .close-btn:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }</style>
+    <script src="script.js"></script> <!-- Link to JavaScript -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="exercise.html">Exercise</a>
+                <a href="diet.html">Diet</a>
+                <a href="wellness.html">Wellness</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+                <a href="discussion.html">Discussion</a>
+                <a href="signup.html">SignUp</a>
+           
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about-section">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>Welcome to <strong>PravahiJivan</strong>, your trusted partner in maintaining a healthy lifestyle and adapting to ever-changing environments. Our mission is to empower individuals with resources, tips, and techniques that support both physical and mental well-being.</p>
+            <p>We believe that wellness should be inclusive and adaptable, catering to your unique lifestyle and regional transitions. From curated diet plans to engaging fitness routines, we bring you tools to stay on top of your health goals.</p>
+
+            <!-- Vision and Mission -->
+            <h2>Our Vision and Mission</h2>
+            <ul>
+                <li><strong>Vision:</strong> A world where wellness is accessible to everyone, everywhere.</li>
+                <li><strong>Mission:</strong> To inspire and guide individuals to lead healthier, more adaptable lives.</li>
+            </ul>
+
+            <!-- Meet the Team -->
+            <h2>Meet the Team</h2>
+            <div class="team">
+                <div class="team-member">
+                    <img src="team1.jpg" alt="Team Member 1">
+                    <h3>Dr. Jashan</h3>
+                    <p>Nutrition Expert</p>
+                </div>
+                <div class="team-member">
+                    <img src="team2.jpg" alt="Team Member 2">
+                    <h3>Simran Choudhary</h3>
+                    <p>Fitness Coach</p>
+                </div>
+                <div class="team-member">
+                    <img src="team3.jpg" alt="Team Member 3">
+                    <h3>Ankita Tanwar</h3>
+                    <p>Yoga Expert</p>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <h2>FAQs</h2>
+            <div class="faq">
+                <div class="faq-item">
+                    <h3>How does PravahiJivan help with lifestyle changes?</h3>
+                    <p class="hidden">Our platform offers personalized recommendations, fitness guides, and regional adaptations to help you navigate lifestyle changes smoothly.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I get personalized fitness or diet plans?</h3>
+                    <p class="hidden">Yes! Our platform provides tailored suggestions based on your preferences and needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 PravahiJivan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-item h3').forEach(faq => {
+            faq.addEventListener('click', () => {
+                const answer = faq.nextElementSibling;
+                answer.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
