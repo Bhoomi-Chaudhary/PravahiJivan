@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - PravahiLife</title>
+    <link rel="stylesheet" href="style.css">
+    <style>/* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        header .logo img {
+            width: 150px;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .blog-list {
+            padding: 20px;
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-list h1 {
+            text-align: center;
+        }
+        
+        .blog-post {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-post h2 {
+            font-size: 1.5em;
+        }
+        
+        .blog-post p {
+            font-size: 1.1em;
+        }
+        
+        .add-blog {
+            padding: 20px;
+            background-color: #fff;
+            max-width: 900px;
+            margin: 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .add-blog h2 {
+            text-align: center;
+        }
+        
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        #formFeedback {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.1em;
+        }</style>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+           
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="exercise.html">Exercise</a>
+            <a href="diet.html">Diet</a>
+            <a href="wellness.html">Wellness</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="discussion.html">Discussion</a>
+            <a href="signup.html">SignUp</a>
+        </nav>
+    </header>
+
+    <section class="blog-container">
+        <h2>Health and Lifestyle Blogs</h2>
+        <div class="blogs">
+            <article class="blog">
+                <h3>How to Adapt to a New Lifestyle</h3>
+                <p class="blog-content">Moving to a new region can be challenging. Here are a few tips on how to adapt to a new lifestyle...</p>
+                <a href="blog1.html" class="read-more">Read More</a>
+            </article>
+
+            <article class="blog">
+                <h3>Importance of Exercise in Daily Life</h3>
+                <p class="blog-content">Exercise is an essential part of maintaining a healthy lifestyle. Here’s why you should incorporate it into your routine...</p>
+                <a href="blog-detail.html?blog=2" class="read-more">Read More</a>
+            </article>
+
+            <article class="blog">
+                <h3>Eating Right: The Key to a Balanced Diet</h3>
+                <p class="blog-content">A balanced diet is crucial for your overall health. Let’s explore the key elements of a healthy diet...</p>
+                <a href="blog-detail.html?blog=3" class="read-more">Read More</a>
+            </article>
+        </div>
+
+        <h3>Share Your Thoughts</h3>
+        <form id="newBlogForm" onsubmit="return submitBlog()">
+            <div class="form-group">
+                <label for="blogTitle">Blog Title</label>
+                <input type="text" id="blogTitle" name="blogTitle" placeholder="Enter Blog Title" required />
+            </div>
+            <div class="form-group">
+                <label for="blogContent">Blog Content</label>
+                <textarea id="blogContent" name="blogContent" placeholder="Write your blog here" required></textarea>
+            </div>
+            <button type="submit" class="btn">Submit Blog</button>
+        </form>
+        <div id="submitMessage" class="message"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 PravahiLife. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function submitBlog() {
+            const title = document.getElementById('blogTitle').value;
+            const content = document.getElementById('blogContent').value;
+            const submitMessage = document.getElementById('submitMessage');
+
+            submitMessage.style.display = 'none'; // Hide message initially
+
+            if (title === "" || content === "") {
+                submitMessage.style.display = 'block';
+                submitMessage.style.color = 'red';
+                submitMessage.innerHTML = "Both fields are required.";
+                return false; // Prevent form submission
+            }
+
+            // Display success message if form is submitted successfully
+            submitMessage.style.display = 'block';
+            submitMessage.style.color = 'green';
+            submitMessage.innerHTML = "Your blog has been submitted successfully!";
+            
+            // Reset the form
+            document.getElementById('newBlogForm').reset();
+            return false; // Prevent form submission (in real scenario, form would be submitted to the server)
+        }
+    </script>
+</body>
+</html>
