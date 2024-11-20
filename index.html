@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Lifestyle Website</title>
+    <style>
+        /* Internal CSS */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('homeimage.jpg'); /* Replace with the actual path to your background image */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #fff;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #ff9800;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #ff9800;
+            color: #000;
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            max-height: 400px;
+            margin: 20px auto;
+        }
+
+        .carousel img {
+            width: 100%;
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        section {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            color: #ff9800;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pravahi Jivan</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="exercise.html">Exercise</a>
+            <a href="diet.html">Diet</a>
+            <a href="wellness.html">Wellness</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="discussion.html">Discussion</a>
+            <a href="signup.html">SignUp</a>
+        </nav>
+    </header>
+
+    <div class="carousel">
+        <img src="exercise.jpg" alt="Exercise" class="active">
+        <img src="diet.jpg" alt="Diet">
+        <img src="wellness.jpg" alt="Wellness">
+    </div>
+
+    <section>
+        <h2>Welcome to Healthy Lifestyle</h2>
+        <p>Explore effective ways to stay healthy and adapt to new lifestyles. Dive into exercises, diet plans, and wellness tips tailored for you.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Pravahi Jivan. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Internal JavaScript
+        const carouselImages = document.querySelectorAll('.carousel img');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            carouselImages[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % carouselImages.length;
+            carouselImages[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 3000); // Change image every 3 seconds
+    </script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Header Styles */
+  header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  header nav a {
+    color: #fff;
+    padding: 10px;
+  }
+  
+  header nav a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  /* Homepage Styles */
+  .homepage {
+    background: url('images/homepage-background.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  .homepage h1 {
+    font-size: 3rem;
+  }
+  
+  .homepage .intro {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  /* Login/Signup Page */
+  form {
+    width: 80%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Blog Page */
+  .blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .blog-post {
+    width: 30%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog-post h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  
+  .blog-post p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Exercise Page */
+  .exercise-section {
+    background-color: #f8f8f8;
+    padding: 50px 0;
+  }
+  
+  .exercise-section .exercise {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+  }
+  
+  .exercise-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+  
+  .exercise-section .exercise img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  /* Diet Page */
+  .diet-section {
+    background-color: #fafafa;
+    padding: 50px 0;
+  }
+  
+  .diet-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .diet-plan {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .diet-plan .diet-item {
+    width: 30%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .diet-plan .diet-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  /* Wellness Page */
+  .wellness-section {
+    background-color: #e0f7fa;
+    padding: 50px 0;
+  }
+  
+  .wellness-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .sleep-tracker {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .sleep-tracker input {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Discussion Page */
+  .discussion-container {
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  .comment {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+  }
+  
+  .comment p {
+    margin: 10px 0;
+  }
+  
+  /* General Media Queries */
+  @media screen and (max-width: 768px) {
+    header nav {
+      flex-direction: column;
+    }
+  
+    .homepage h1 {
+      font-size: 2.5rem;
+    }
+  
+    .blog-posts {
+      flex-direction: column;
+    }
+  
+    .exercise-section .exercise {
+      width: 100%;
+    }
+  
+    .diet-plan .diet-item {
+      width: 100%;
+    }
+  }
