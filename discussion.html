@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion</title>
+    <link rel="stylesheet" href="style.css">
+    <style>body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        background-color: #4CAF50;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    header nav ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    header nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+    
+    header nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .discussion-page {
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .discussion-page h1 {
+        margin-bottom: 30px;
+        color: #4CAF50;
+    }
+    
+    .post-form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+        width: 50%;
+        margin: auto;
+    }
+    
+    .post-form label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+    }
+    
+    .post-form input, .post-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    
+    .post-form button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    
+    .post-form button:hover {
+        background-color: #45a049;
+    }
+    
+    #discussion-posts {
+        margin-top: 40px;
+    }
+    
+    .discussion-item {
+        background-color: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .discussion-item h3 {
+        color: #333;
+    }
+    
+    .comment-btn {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .comment-btn:hover {
+        background-color: #45a049;
+    }
+    
+    .comments {
+        margin-top: 20px;
+    }
+    
+    .submit-comment {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    
+    .submit-comment:hover {
+        background-color: #45a049;
+    }
+    
+    .comment-list p {
+        margin-top: 10px;
+        text-align: left;
+    }
+    
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #4CAF50;
+        color: white;
+    }
+    </style>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="exercise.html">Exercise</a>
+            <a href="diet.html">Diet</a>
+            <a href="wellness.html">Wellness</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="discussion.html">Discussion</a>
+            <a href="signup.html">SignUp</a>
+        </nav>
+    </header>
+
+    <!-- Discussion Section -->
+    <section id="discussion-section">
+        <div class="container">
+            <h1>Discussion Board</h1>
+            <p>Join the conversation and share your thoughts on how to maintain a healthy lifestyle!</p>
+
+            <!-- Comment Form -->
+            <div class="comment-form">
+                <h2>Post Your Comment</h2>
+                <form id="commentForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" name="comment" rows="4" required></textarea>
+
+                    <button type="submit">Post Comment</button>
+                </form>
+            </div>
+
+            <!-- Comments Display (Parent Container) -->
+            <div id="comments-display" class="comments-container">
+                <h2>Recent Discussions</h2>
+                <!-- Placeholder for comments -->
+                <div class="comment">
+                    <p><strong>Aman Solanki</strong> says:</p>
+                    <p>"I believe a healthy lifestyle starts with a balanced diet and regular exercise."</p>
+                </div>
+                <div class="comment">
+                    <p><strong>Devesh Rana</strong> says:</p>
+                    <p>"Sleep is just as important as working out. A good night's rest can make all the difference."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 PravahiJivan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle comment submission and display
+        document.getElementById("commentForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const comment = document.getElementById("comment").value;
+
+            const newComment = document.createElement("div");
+            newComment.classList.add("comment");
+
+            const commentContent = <p><strong>${name}</strong> says:</p><p>"${comment}"</p>;
+            newComment.innerHTML = commentContent;
+
+            document.getElementById("comments-display").appendChild(newComment);
+
+            // Clear the form fields
+            document.getElementById("name").value = '';
+            document.getElementById("comment").value = '';
+        });
+    </script>
+</body>
+</html>

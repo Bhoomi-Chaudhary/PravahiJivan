@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plans</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to CSS -->
+    <style>body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        background-color: #4CAF50;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    header nav ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    header nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+    
+    header nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .exercise-page {
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .exercise-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    
+    .exercise {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 30%;
+    }
+    
+    .exercise img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    
+    .exercise button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    
+    .exercise button:hover {
+        background-color: #45a049;
+    }
+    
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #4CAF50;
+        color: white;
+    }
+    
+    input[type="checkbox"] {
+        margin-top: 10px;
+    }</style>
+    <script src="script.js" defer></script> <!-- Link to JavaScript -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="exercise.html">Exercise</a>
+            <a href="diet.html">Diet</a>
+            <a href="wellness.html">Wellness</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="discussion.html">Discussion</a>
+            <a href="signup.html">SignUp</a>
+        </nav>
+    </header>
+
+    <!-- Diet Plans Section -->
+    <section id="diet-section">
+        <div class="container">
+            <h1>Diet Plans</h1>
+            <p>Discover personalized diet plans for a healthier and balanced lifestyle. Choose a plan that fits your needs and goals.</p>
+
+            <!-- Diet Categories -->
+            <div class="diet-categories">
+                <div class="diet-card">
+                    <h2>Weight Loss</h2>
+                    <img src="weight-loss.webp" alt="Weight Loss Diet" />
+                    <p>A calorie-deficit diet to help you shed extra weight while staying healthy.</p>
+                    <button onclick="showDietDetails('weightLoss')">Learn More</button>
+                </div>
+                <div class="diet-card">
+                    <h2>Muscle Gain</h2>
+                    <img src="muscle-gain.webp" alt="Muscle Gain Diet" />
+                    <p>High-protein diet plans designed to build lean muscle effectively.</p>
+                    <button onclick="showDietDetails('muscleGain')">Learn More</button>
+                </div>
+                <div class="diet-card">
+                    <h2>Balanced Diet</h2>
+                    <img src="balanced.jpg" alt="Balanced Diet" />
+                    <p>Comprehensive meals ensuring a mix of essential nutrients for overall health.</p>
+                    <button onclick="showDietDetails('balanced')">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Diet Details -->
+    <div id="modal" class="hidden">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 PravahiJivan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const dietDetails = {
+            weightLoss: {
+                title: "Weight Loss Diet",
+                description: "Focus on a calorie deficit diet rich in vegetables, lean proteins, and healthy fats. Reduce processed foods and sugar for better results."
+            },
+            muscleGain: {
+                title: "Muscle Gain Diet",
+                description: "Include high-protein meals with complex carbs and healthy fats. Examples: chicken breast, quinoa, eggs, and fish."
+            },
+            balanced: {
+                title: "Balanced Diet",
+                description: "A mix of proteins, carbs, and fats. Ideal for maintaining overall health and energy levels. Examples: fruits, veggies, grains, and nuts."
+            }
+        };
+
+        function showDietDetails(type) {
+            const modal = document.getElementById("modal");
+            const title = document.getElementById("modal-title");
+            const description = document.getElementById("modal-description");
+
+            title.textContent = dietDetails[type].title;
+            description.textContent = dietDetails[type].description;
+
+            modal.classList.remove("hidden");
+        }
+
+        function closeModal() {
+            document.getElementById("modal").classList.add("hidden");
+        }
+    </script>
+</body>
+</html>

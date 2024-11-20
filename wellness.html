@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to CSS -->
+    <style>body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        background-color: #4CAF50;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    header nav ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    header nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+    
+    header nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .wellness-page {
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .wellness-page h1 {
+        margin-bottom: 30px;
+        color: #4CAF50;
+    }
+    
+    .sleep-tracker {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+    }
+    
+    .wellness-tips {
+        margin-top: 40px;
+    }
+    
+    .tip {
+        background-color: #fff;
+        padding: 20px;
+        margin: 10px 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .wellness-quiz {
+        background-color: #fff;
+        padding: 20px;
+        margin-top: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    
+    button:hover {
+        background-color: #45a049;
+    }
+    
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #4CAF50;
+        color: white;
+    }</style>
+    <script src="script.js" defer></script> <!-- Link to JavaScript -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="exercise.html">Exercise</a>
+            <a href="diet.html">Diet</a>
+            <a href="wellness.html">Wellness</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="discussion.html">Discussion</a>
+            <a href="signup.html">SignUp</a>
+        </nav>
+    </header>
+
+    <!-- Wellness Section -->
+    <section id="wellness-section">
+        <div class="container">
+            <h1>Welcome to Wellness</h1>
+            <p>Your journey to holistic health starts here. Explore mindfulness practices, sleep tips, and stress management techniques.</p>
+
+            <!-- Wellness Categories -->
+            <div class="wellness-categories">
+                <div class="wellness-card">
+                    <h2>Mindfulness</h2>
+                    <img src="mindfullness.jpg" alt="Mindfulness">
+                    <p>Discover meditation techniques and breathing exercises to cultivate mindfulness and inner peace.</p>
+                    <button onclick="showWellnessDetails('mindfulness')">Learn More</button>
+                </div>
+                <div class="wellness-card">
+                    <h2>Stress Management</h2>
+                    <img src="stress-management.webp" alt="Stress Management">
+                    <p>Practical strategies to handle stress and maintain mental well-being in daily life.</p>
+                    <button onclick="showWellnessDetails('stressManagement')">Learn More</button>
+                </div>
+                <div class="wellness-card">
+                    <h2>Sleep Tips</h2>
+                    <img src="sleep.jpg" alt="Sleep Tips">
+                    <p>Effective habits and tips for improving sleep quality and establishing a healthy sleep routine.</p>
+                    <button onclick="showWellnessDetails('sleepTips')">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Wellness Details -->
+    <div id="modal" class="hidden">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 PravahiJivan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const wellnessDetails = {
+            mindfulness: {
+                title: "Mindfulness",
+                description: "Mindfulness is the practice of being fully present in the moment. Start with 10-minute guided meditations daily or try deep breathing exercises to calm your mind."
+            },
+            stressManagement: {
+                title: "Stress Management",
+                description: "Manage stress by identifying triggers, practicing gratitude, and staying physically active. Take breaks and practice hobbies you love to maintain balance."
+            },
+            sleepTips: {
+                title: "Sleep Tips",
+                description: "Enhance your sleep by creating a consistent bedtime routine, avoiding screens before sleep, and ensuring your sleeping environment is dark and quiet."
+            }
+        };
+
+        function showWellnessDetails(type) {
+            const modal = document.getElementById("modal");
+            const title = document.getElementById("modal-title");
+            const description = document.getElementById("modal-description");
+
+            title.textContent = wellnessDetails[type].title;
+            description.textContent = wellnessDetails[type].description;
+
+            modal.classList.remove("hidden");
+        }
+
+        function closeModal() {
+            document.getElementById("modal").classList.add("hidden");
+        }
+    </script>
+</body>
+</html>

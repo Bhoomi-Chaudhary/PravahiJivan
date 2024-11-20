@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to CSS -->
+    <style>body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        background-color: #4CAF50;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    header nav ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    header nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+    
+    header nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .exercise-page {
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .exercise-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    
+    .exercise {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 30%;
+    }
+    
+    .exercise img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    
+    .exercise button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    
+    .exercise button:hover {
+        background-color: #45a049;
+    }
+    
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #4CAF50;
+        color: white;
+    }
+    
+    input[type="checkbox"] {
+        margin-top: 10px;
+    }</style>
+    <script src="script.js" defer></script> <!-- Link to JavaScript -->
+</head>
+<body class="dark-theme">
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <ul>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="exercise.html">Exercise</a>
+                <a href="diet.html">Diet</a>
+                <a href="wellness.html">Wellness</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+                <a href="discussion.html">Discussion</a>
+                <a href="signup.html">SignUp</a>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Exercise Section -->
+    <section id="exercise-section">
+        <div class="container">
+            <h1>Exercise Routines</h1>
+            <p>Stay fit and healthy with these curated exercise routines designed to match all fitness levels. Choose a routine that suits your goals and lifestyle.</p>
+
+            <!-- Exercise Categories -->
+            <div class="exercise-categories">
+                <div class="exercise-card">
+                    <h2>Cardio</h2>
+                    <img src="cardio.webp" alt="Cardio" >
+                    <p>Improve your stamina with cardio workouts like running, cycling, and HIIT.</p>
+                    <button onclick="showDetails('cardio')">Learn More</button>
+                </div>
+                <div class="exercise-card">
+                    <h2>Strength Training</h2>
+                    <img src="strength.jpg" alt="Strength Training" />
+                    <p>Build muscle and strength with weightlifting and bodyweight exercises.</p>
+                    <button onclick="showDetails('strength')">Learn More</button>
+                </div>
+                <div class="exercise-card">
+                    <h2>Yoga</h2>
+                    <img src="yoga.webp" alt="Yoga" />
+                    <p>Enhance flexibility and mental health with yoga and meditation practices.</p>
+                    <button onclick="showDetails('yoga')">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Exercise Details -->
+    <div id="modal" class="hidden">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 PravahiJivan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const exerciseDetails = {
+            cardio: {
+                title: "Cardio Workouts",
+                description: "Cardio exercises improve cardiovascular health and endurance. Examples include running, swimming, and cycling. Aim for 30 minutes, 3–5 times a week."
+            },
+            strength: {
+                title: "Strength Training",
+                description: "Strength training builds muscle and boosts metabolism. Exercises include squats, deadlifts, and push-ups. Incorporate 2–3 sessions weekly."
+            },
+            yoga: {
+                title: "Yoga and Meditation",
+                description: "Yoga enhances flexibility and mental clarity. Try poses like downward dog, cobra, and tree. Practice for 15–30 minutes daily for best results."
+            }
+        };
+
+        function showDetails(type) {
+            const modal = document.getElementById("modal");
+            const title = document.getElementById("modal-title");
+            const description = document.getElementById("modal-description");
+
+            title.textContent = exerciseDetails[type].title;
+            description.textContent = exerciseDetails[type].description;
+
+            modal.classList.remove("hidden");
+        }
+
+        function closeModal() {
+            document.getElementById("modal").classList.add("hidden");
+        }
+    </script>
+</body>
+</html>
